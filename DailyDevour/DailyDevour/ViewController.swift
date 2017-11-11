@@ -8,14 +8,7 @@
 
 import UIKit
 
-class Model {
-    var pressed: Bool = false;
-}
-
 class ViewController: UIViewController {
-
-    var model: Model = Model();
-    @IBOutlet weak var helloWorld: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +18,6 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func buttonPressed() {
-        model.pressed = !model.pressed;
-        helloWorld.setTitle("Thanks", for: .normal);
-        print(model.pressed);
     }
     
 
