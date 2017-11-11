@@ -21,23 +21,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lis-ka-dE0">
-                                <rect key="frame" x="147" y="318" width="80" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" fixedFrame="YES" text="Daily Devour" textAlignment="center" lineBreakMode="clip" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqx-aG-vBw">
+                                <rect key="frame" x="16" y="60" width="343" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Hello World"/>
-                                <connections>
-                                    <action selector="buttonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="hUD-84-ZRO"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yHm-pu-Cs4">
+                                <rect key="frame" x="87.5" y="283" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="oNN-a1-3bb"/>
+                                    <constraint firstAttribute="height" constant="40" id="xXB-gK-S5T"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="azo-Ev-hoT">
+                                <rect key="frame" x="87.5" y="348" width="200" height="40"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="azo-Ev-hoT" firstAttribute="top" secondItem="yHm-pu-Cs4" secondAttribute="bottom" constant="25" id="Sfd-L9-CQC"/>
+                            <constraint firstItem="azo-Ev-hoT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UDw-IN-enI"/>
+                            <constraint firstItem="azo-Ev-hoT" firstAttribute="height" secondItem="yHm-pu-Cs4" secondAttribute="height" id="eRi-Yn-e7V"/>
+                            <constraint firstItem="azo-Ev-hoT" firstAttribute="width" secondItem="yHm-pu-Cs4" secondAttribute="width" id="kKk-0u-hFf"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yHm-pu-Cs4" secondAttribute="bottom" constant="344" id="sJh-ro-N6C"/>
+                            <constraint firstItem="yHm-pu-Cs4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xY8-K9-sDd"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="helloWorld" destination="Lis-ka-dE0" id="Jin-Mg-ZGV"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>

@@ -14,7 +14,7 @@ typealias host_type = String
 
 
 enum Tag{
-    case free, coffee, undefined;
+    case free, coffee, greek, breakfast, lunch, dinner, humanitarian, snack, undefined;
     
     init(name: String) {
         switch name {
@@ -22,6 +22,18 @@ enum Tag{
             self = .free;
         case "Coffee":
             self = .coffee
+        case "Greek":
+            self = .greek;
+        case "Breakfast":
+            self = .breakfast;
+        case "Lunch":
+            self = .lunch;
+        case "Dinner":
+            self = .dinner;
+        case "Humanitarian":
+            self = .humanitarian;
+        case "Snack":
+            self = .snack;
         default:
             self = .undefined;
             os_log("An undefined tag was created", log: OSLog.default, type: OSLogType.error);
@@ -34,6 +46,18 @@ enum Tag{
             return "Free";
         case .coffee:
             return "Coffee";
+        case .greek:
+            return "Greek";
+        case .breakfast:
+            return "Breakfast";
+        case .lunch:
+            return "Lunch";
+        case .dinner:
+            return "Dinner";
+        case .humanitarian:
+            return "Humanitarian";
+        case .snack:
+            return "Snack";
         default:
             return "Undefined Tag";
         }
