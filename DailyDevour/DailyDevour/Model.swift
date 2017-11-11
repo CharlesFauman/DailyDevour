@@ -104,7 +104,14 @@ class Model{
     
     
     // public
-    
+    public func getEvent(host_name : String, event_name : String, location_coor : (Double, Double)) -> Event {
+        
+        // query the specific event in the database
+        
+        let event = Event(host: <#T##host_type#>, name: <#T##String#>, location_name: <#T##String#>, location_coor: <#T##(Double, Double)#>, tags: <#T##[Tag]#>, start_time: <#T##Date#>, end_time: <#T##Date#>, website: <#T##String?#>)
+        
+        return event
+    }
     
     
     // private
