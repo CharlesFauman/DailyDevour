@@ -7,22 +7,24 @@
 //
 
 import Foundation
+import os
 
 typealias host_type = String
 
 
 
-enum TagEnum{
-    case free, coffee;
+enum Tag{
+    case free, coffee, undefined;
     
-    init?(name: String) {
+    init(name: String) {
         switch name {
         case "Free":
             self = .free;
         case "Coffee":
             self = .coffee
         default:
-            self = nil;
+            self = .undefined;
+            os_log("An undefined tag was created", log: OSLog.default, type: OSLogType.error);
         }
     }
     
@@ -33,7 +35,7 @@ enum TagEnum{
         case .coffee:
             return "Coffee";
         default:
-            return "Unrecognized Tag";
+            return "Undefined Tag";
         }
     }
 }
@@ -42,16 +44,24 @@ enum TagEnum{
 /**
  Non mutable storage of event information
  **/
-class EventType{
+struct Event{
     
     // variables
     let host : String
+    let tags : [Tag];
+    let start_time : Date;
+    let end_time : Date;
+    let website: String?;
     
     
     
     // public
-    init(host : host_type){
+    init(host : host_type, tags : [Tag], start_time : Date, end_time : Date, website: String?){
         self.host = host
+        self.start_time = start_time;
+        self.end_time = end_time;
+        self.tags = tags;
+        self.website = website;
     }
     
     
