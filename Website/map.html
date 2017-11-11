@@ -3,6 +3,12 @@
 <head>
     <title>My website</title>
     <link type="text/css" rel="stylesheet" href="map.css"/>
+    <style>
+            #map {
+                height: 400px;
+                width: 100%;
+             }
+        </style>
 </head>
 <body>
 
@@ -10,19 +16,28 @@
     <div id="header">
         <h1>Daily Devour</h1>
     </div>
-    <div id="content">
-
-        <div id="nav">
-            <h3>Navigation</h3>
-            <br>
-            <p> Register </p>
-        </div>
 
         <div id="main">
-            <h2>MAP</h2>
-            <p> Dining app blah blah blah.</p>
-            <img src="map.jpg" width="200"> 
-
+            <center> <h2>MAP</h2> </center>
+            <center> <p> Dining app blah blah blah.</p> </center>
+            <!-- <img src="map.jpg" width="500">  -->
+            <div id="map"></div>
+            <script>
+                function initMap() {
+                    var uluru = {lat: 42.729321, lng:-73.679661};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 15,
+                        center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map
+                    });
+                }
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxoZ3626f5Sb1NkObEMe3BJOpJhqDJ4TM&callback=initMap">
+            </script>
 
 
         </div>
@@ -37,20 +52,6 @@
                 0;
                 10;
                 text-align: center;
-            }
-
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f9f9f9;
-                min-width: 180px;
-                box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-                padding: 12px 16px;
-                text-align: left;
-            }
-
-            .dropdown:hover .dropdown-content {
-                display: block;
             }
         </style>
 
