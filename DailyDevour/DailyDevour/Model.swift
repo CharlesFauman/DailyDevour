@@ -72,6 +72,9 @@ struct Event{
     
     // variables
     let host : String
+    let name : String
+    let location_name : String;
+    let location_coor : (Double, Double);
     let tags : [Tag];
     let start_time : Date;
     let end_time : Date;
@@ -80,8 +83,11 @@ struct Event{
     
     
     // public
-    init(host : host_type, tags : [Tag], start_time : Date, end_time : Date, website: String?){
+    init(host : host_type, name: String, location_name : String, location_coor : (Double, Double), tags : [Tag], start_time : Date, end_time : Date, website: String?){
         self.host = host
+        self.name = name;
+        self.location_name = location_name;
+        self.location_coor = location_coor;
         self.start_time = start_time;
         self.end_time = end_time;
         self.tags = tags;
