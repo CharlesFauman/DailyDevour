@@ -68,13 +68,13 @@ enum Tag{
 /**
  Non mutable storage of event information
  **/
-struct Event{
+struct Event {
     
     // variables
     let host : String
     let name : String
     let location_name : String;
-    let location_coor : (Double, Double);
+    let location_coor : (lat: Double, long: Double);//latitude, logitude
     let tags : [Tag];
     let start_time : Date;
     let end_time : Date;
@@ -87,11 +87,21 @@ struct Event{
         self.host = host
         self.name = name;
         self.location_name = location_name;
-        self.location_coor = location_coor;
+        self.location_coor = location_coor;//latitude, logitude
         self.start_time = start_time;
         self.end_time = end_time;
         self.tags = tags;
         self.website = website;
+    }
+    
+    func contains(word: String) -> Bool {
+        if host.lowercased().contains(word) {return true;}
+        if name.lowercased().contains(word) {return true;}
+        if location_name.lowercased().contains(word) {return true;}
+        for tag in tags {
+            if tag.getName().lowercased().contains(word) {return true}
+        }
+        return false;
     }
     
     
@@ -104,9 +114,9 @@ class Model{
     
     
     // public
-    public func getAllEvents() -> {
+    //public func getAllEvents() -> {
         
-    }
+    //}
     
     /*
     public func getEvent(host_name : String, event_name : String, location_coor : (Double, Double)) -> Event {
