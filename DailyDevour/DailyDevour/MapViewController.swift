@@ -11,7 +11,7 @@ import UIKit
 import MapKit
 
 
-class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, UITextFieldDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var map_view: MKMapView!
     

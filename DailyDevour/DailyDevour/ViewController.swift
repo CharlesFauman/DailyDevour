@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogInController: UIViewController {
+class LogInController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var log_in_button: UIButton!
     @IBOutlet weak var username_field: UITextField!
@@ -17,12 +17,19 @@ class LogInController: UIViewController {
     
     override func viewDidLoad() {
         
-        var events : [Event] = Model.getAllEvents()
+        //events = Model.getAllEvents()
+        username_field.delegate = self;
+        password_field.delegate = self;
         
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

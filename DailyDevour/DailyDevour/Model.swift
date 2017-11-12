@@ -164,7 +164,7 @@ class Model{
             let dates = all_components[4].components(separatedBy : ",")
             
             let date_formatter = DateFormatter();
-            date_formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            date_formatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         
             let start_date = date_formatter.date(from: dates[0])!
             let end_date = date_formatter.date(from: dates[1])!
