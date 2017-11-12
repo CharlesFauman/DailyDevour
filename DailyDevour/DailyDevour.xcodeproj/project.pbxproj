@@ -15,6 +15,7 @@
 		4BC0EB2E1FB7A2BB00E06861 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC0EB2D1FB7A2BB00E06861 /* MapKit.framework */; };
 		4BC0EB301FB7B4F600E06861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0EB2F1FB7B4F500E06861 /* MapViewController.swift */; };
 		578F60341FB77C72002B2F9F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F60331FB77C72002B2F9F /* Model.swift */; };
+		57BCF4B11FB7C06200DA9209 /* sample_events.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57BCF4B01FB7C06200DA9209 /* sample_events.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4BC0EB2D1FB7A2BB00E06861 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4BC0EB2F1FB7B4F500E06861 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		578F60331FB77C72002B2F9F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		57BCF4B01FB7C06200DA9209 /* sample_events.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample_events.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				4BC0EB1C1FB7752F00E06861 /* ViewController.swift */,
 				4BC0EB2F1FB7B4F500E06861 /* MapViewController.swift */,
 				4BC0EB1E1FB7752F00E06861 /* Main.storyboard */,
+				57BCF4B01FB7C06200DA9209 /* sample_events.txt */,
 				4BC0EB211FB7752F00E06861 /* Assets.xcassets */,
 				4BC0EB231FB7752F00E06861 /* LaunchScreen.storyboard */,
 				4BC0EB261FB7752F00E06861 /* Info.plist */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BC0EB251FB7752F00E06861 /* LaunchScreen.storyboard in Resources */,
+				57BCF4B11FB7C06200DA9209 /* sample_events.txt in Resources */,
 				4BC0EB221FB7752F00E06861 /* Assets.xcassets in Resources */,
 				4BC0EB201FB7752F00E06861 /* Main.storyboard in Resources */,
 			);

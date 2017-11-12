@@ -1,11 +1,11 @@
 from __future__ import print_function
 import httplib2
 import os
-import read_events
+
 from apiclient import discovery
+import oauth2client
 from oauth2client import client
 from oauth2client import tools
-from oauth2client.file import Storage
 
 import datetime
 
@@ -38,7 +38,7 @@ def get_credentials():
     credential_path = os.path.join(credential_dir,
                                    'calendar-python-quickstart.json')
 
-    store = Storage(credential_path)
+    store = oauth2client.file.Storage(credential_path)
     credentials = store.get()
     if not credentials or credentials.invalid:
         flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
@@ -60,34 +60,26 @@ def main():
     http = credentials.authorize(httplib2.Http())
     service = discovery.build('calendar', 'v3', http=http)
 
-    now = datetime.datetime.utcnow().isoformat() + 'Z' # 'Z' indicates UTC time
-    print('Getting the upcoming 10 events')
-    eventsResult = service.events().list(
-        calendarId='primary', timeMin=now, maxResults=10, singleEvents=True,
-        orderBy='startTime').execute()
-    events = eventsResult.get('items', [])
+    # Refer to the Python quickstart on how to setup the environment:
+    # https://developers.google.com/google-apps/calendar/quickstart/python
+    # Change the scope to 'https://www.googleapis.com/auth/calendar' and delete any
+    # stored credentials.
 
-    if not events:
-        print('No upcoming events found.')
-    for event in events:
-        start = event['start'].get('dateTime', event['start'].get('date'))
-        print(start, event['summary'])
-    
-    '''
-    request an event list file name and make events
-    
-    '''
-    #GET https://www.googleapis.com/calendar/v3/users/me/calendarList/calendarId
-    
-    GMT_OFF = '-00:00'
     event = {
-    'summary': 'Dinner with friends',
-    'start':   {'dateTime': '2017-11-15T19:00:00%s' % GMT_OFF},
-    'end':     {'dateTime': '2017-11-15T22:00:00%s' % GMT_OFF},
+      'summary': 'Hamburgers',
+      'location': 'Russel Sage Dining Hall',
+      'start': {
+        'dateTime': '2017-11-17T09:00:00-07:00',
+        'timeZone': 'America/New_York',
+      },
+      'end': {
+        'dateTime': '2017-11-17T17:00:00-07:00',
+        'timeZone': 'America/New_York',
+      }
     }
-    GCAL = service.calendars().get(calendarId='primary').execute()
-    print(GCAL)
-    e = service.events().insert(calendarId='primary', sendNotifications=True, body=event).execute()
-    
+
+    event = service.events().insert(calendarId='primary', body=event).execute()
+    print ('Event created: %s' % (event.get('htmlLink')))
+
 if __name__ == '__main__':
     main()
