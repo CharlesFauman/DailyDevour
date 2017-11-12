@@ -105,8 +105,8 @@ class Model{
     
     // public
     
-    
-    public func getAllEvents() -> [Event] {
+    // -> [Event]
+    public func getAllEvents(){
         let bundleURL = Bundle.main.bundleURL
         //let dataFolderURL = bundleURL.appendingPathComponent("data")
         let fileURL = bundleURL.appendingPathComponent("sample_events.txt")
