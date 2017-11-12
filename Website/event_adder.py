@@ -1,7 +1,7 @@
 from __future__ import print_function
 import httplib2
 import os
-
+import read_events
 from apiclient import discovery
 from oauth2client import client
 from oauth2client import tools
@@ -17,7 +17,7 @@ except ImportError:
 
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/calendar-python-quickstart.json
-SCOPES = 'https://www.googleapis.com/auth/calendar.readonly'
+SCOPES = 'https://www.googleapis.com/auth/calendar'
 CLIENT_SECRET_FILE = 'client_secret.json'
 APPLICATION_NAME = 'Google Calendar API Python Quickstart'
 
@@ -72,7 +72,22 @@ def main():
     for event in events:
         start = event['start'].get('dateTime', event['start'].get('date'))
         print(start, event['summary'])
-
-
+    
+    '''
+    request an event list file name and make events
+    
+    '''
+    #GET https://www.googleapis.com/calendar/v3/users/me/calendarList/calendarId
+    
+    GMT_OFF = '-00:00'
+    event = {
+    'summary': 'Dinner with friends',
+    'start':   {'dateTime': '2017-11-15T19:00:00%s' % GMT_OFF},
+    'end':     {'dateTime': '2017-11-15T22:00:00%s' % GMT_OFF},
+    }
+    GCAL = service.calendars().get(calendarId='primary').execute()
+    print(GCAL)
+    e = service.events().insert(calendarId='primary', sendNotifications=True, body=event).execute()
+    
 if __name__ == '__main__':
     main()
