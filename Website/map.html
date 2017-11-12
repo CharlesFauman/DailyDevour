@@ -24,17 +24,64 @@
             <br>
             <br>
             <script>
+				
+				function displayEvent(event_string){
+					var all_components = event_string.split("|");
+					alert(all_components[0] + "\n" +
+					all_components[1] + "\n" +
+					all_components[2] + "\n" +
+					all_components[3] + "\n" +
+					all_components[4] + "\n" +
+					all_components[5] + "\n" +
+					all_components[6] + "\n"
+					);
+				}
+			
                 function initMap() {
                     var uluru = {lat: 42.729321, lng:-73.679661};
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 15,
                         center: uluru
                     });
+					/*
                     var marker = new google.maps.Marker({
                         position: uluru,
                         map: map
                     });
+					*/
+					var allText = ""
+					var rawFile = new XMLHttpRequest();
+					rawFile.open("GET","event_list_test.txt",false);
+					rawFile.onreadystatechange = function() {
+						if(rawFile.readyState === 4) {
+							if(rawFile.status === 200 || rawFile.status === 0){
+								allText = rawFile.responseText;
+							}
+						}
+					}
+					rawFile.send(null);
+					
+					
+					var all_event_strings = allText.split("\n");
+					for (var i = 0; i < all_event_strings.length; ++i) {
+						var all_components = all_event_strings[i].split("|");
+						var locations = all_components[3].split(",");
+						var pos = {lat: parseFloat(locations[0]), lng: parseFloat(locations[1])}
+						
+						let marker = new google.maps.Marker({
+							title: all_components[0] + ":\n" + all_components[1],
+							subtitle : i,
+							position: pos,
+							map: map
+						});
+						
+						google.maps.event.addListener(marker, 'click', function() {
+							displayEvent(all_event_strings[marker.subtitle]);
+						});
+						
+					}
                 }
+				
             </script>
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxoZ3626f5Sb1NkObEMe3BJOpJhqDJ4TM&callback=initMap">
