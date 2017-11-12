@@ -1,3 +1,5 @@
-CS Club | quesadillas | DCC | 12.34 , 56.78 | 2017-11-15T14:00:15 , 2017-11-15T15:30:15 | youtube.com | food, lunch, mexican |
-B | pizza | DCC | 12.34 , 56.78 | 2017-11-15T14:00:15 , 2017-11-15T15:30:15 | youtube.com | food, lunch, mexican |
-gs | chocolate covered sundaes | DCC | 12.34 , 56.78 | 2017-11-15T14:00:15 , 2017-11-15T15:30:15 | youtube.com | food, lunch, mexican |
+Quad Hall Council|Winter Shebang|Quad Hall|42.730826994128364,-73.68063569068909|2017-11-15T14:00,2017-11-15T15:30||coffee,free food,apple cider
+Major League Hacking|HackRPI|DCC|42.72913258556499,-73.67957353591919|2017-11-15T14:00,2017-11-15T16:00|https://hackrpi.com/|pizza,snacks,chips,soft drinks
+RPI Players|Cool Event With Food|Quad|42.730798622969,-73.680315971342|2017-11-15T14:00,2017-11-15T16:00||
+Hostt|coolio|RPI|42.729321,-73.679661|2017-11-01T08:30,2017-11-01T08:30||
+New thing|awesome event|DCC|42.728100155793,-73.679491997027|2017-11-01T08:30,2017-11-01T08:30||
