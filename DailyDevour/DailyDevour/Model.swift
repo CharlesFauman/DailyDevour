@@ -109,8 +109,8 @@ class Model{
         let bundleURL = Bundle.main.bundleURL
         //let dataFolderURL = bundleURL.appendingPathComponent("data")
         let fileURL = bundleURL.appendingPathComponent("sample_events.txt")
-        print(fileURL.path)
-        print(FileManager.default.fileExists(atPath: fileURL.path))
+        //print(fileURL.path)
+        //print(FileManager.default.fileExists(atPath: fileURL.path))
         var mytext : String = ""
         do {
             mytext = try String(contentsOf: fileURL)
@@ -123,6 +123,7 @@ class Model{
         
         let events = mytext.components(separatedBy : "\n")
         for event in events{
+            print("next event")
             var all_components = event.components(separatedBy : "|")
             let event_host = all_components[0]
             let event_name = all_components[1]
@@ -130,17 +131,14 @@ class Model{
             
             let locations = all_components[3].components(separatedBy : ",")
             let latitude = Double(locations[0])!
-            print("HEYYYYY")
-            print(locations[1])
             let longitude = Double(locations[1])!
             
             
             let dates = all_components[4].components(separatedBy : ",")
             
             let date_formatter = DateFormatter();
-            date_formatter.dateFormat = "yyyy-MM-dd hh:mm"
+            date_formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
-            
             let start_date = date_formatter.date(from: dates[0])!
             let end_date = date_formatter.date(from: dates[1])!
             

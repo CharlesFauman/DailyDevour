@@ -66,14 +66,14 @@ def main():
     # stored credentials.
 
     event = {
-      'summary': 'Hamburgers',
+      'summary': 'Pizza',
       'location': 'Russel Sage Dining Hall',
       'start': {
-        'dateTime': '2017-11-17T09:00:00-07:00',
+        'dateTime': '2017-11-16T09:00:00-07:00',
         'timeZone': 'America/New_York',
       },
       'end': {
-        'dateTime': '2017-11-17T17:00:00-07:00',
+        'dateTime': '2017-11-16T17:00:00-07:00',
         'timeZone': 'America/New_York',
       }
     }

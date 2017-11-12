@@ -1,2 +1,2 @@
-Quad Hall Council|Winter Shebang|Quad Hall|42.730826994128364,-73.68063569068909|2017-11-11 12:00,2017-11-12 15:00||coffee,free food,apple cider
+Quad Hall Council|Winter Shebang|Quad Hall|42.730826994128364,-73.68063569068909|2017-11-15T14:00:15,2017-11-15T15:30:15||coffee,free food,apple cider
 Major League Hacking | HackRPI | DCC |42.72913258556499, -73.67957353591919 | 2017-11-11 12:00, 2017-11-12 15:00 | https://hackrpi.com/ | pizza, snacks, chips, soft drinks
