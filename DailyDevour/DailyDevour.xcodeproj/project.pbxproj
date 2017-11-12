@@ -15,8 +15,6 @@
 		4BC0EB2E1FB7A2BB00E06861 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BC0EB2D1FB7A2BB00E06861 /* MapKit.framework */; };
 		4BC0EB301FB7B4F600E06861 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC0EB2F1FB7B4F500E06861 /* MapViewController.swift */; };
 		578F60341FB77C72002B2F9F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F60331FB77C72002B2F9F /* Model.swift */; };
-		57BCF4AE1FB7B7F700DA9209 /* mysql-swift in Resources */ = {isa = PBXBuildFile; fileRef = 57BCF4AC1FB7B7F700DA9209 /* mysql-swift */; };
-		57BCF4AF1FB7B7F700DA9209 /* test_db in Resources */ = {isa = PBXBuildFile; fileRef = 57BCF4AD1FB7B7F700DA9209 /* test_db */; };
 		57BCF4B11FB7C06200DA9209 /* sample_events.csv in Resources */ = {isa = PBXBuildFile; fileRef = 57BCF4B01FB7C06200DA9209 /* sample_events.csv */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +29,6 @@
 		4BC0EB2D1FB7A2BB00E06861 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4BC0EB2F1FB7B4F500E06861 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		578F60331FB77C72002B2F9F /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		57BCF4AC1FB7B7F700DA9209 /* mysql-swift */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mysql-swift"; sourceTree = SOURCE_ROOT; };
-		57BCF4AD1FB7B7F700DA9209 /* test_db */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test_db; sourceTree = SOURCE_ROOT; };
 		57BCF4B01FB7C06200DA9209 /* sample_events.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = sample_events.csv; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,8 +73,6 @@
 				4BC0EB211FB7752F00E06861 /* Assets.xcassets */,
 				4BC0EB231FB7752F00E06861 /* LaunchScreen.storyboard */,
 				4BC0EB261FB7752F00E06861 /* Info.plist */,
-				57BCF4AC1FB7B7F700DA9209 /* mysql-swift */,
-				57BCF4AD1FB7B7F700DA9209 /* test_db */,
 			);
 			path = DailyDevour;
 			sourceTree = "<group>";
@@ -154,8 +148,6 @@
 				57BCF4B11FB7C06200DA9209 /* sample_events.csv in Resources */,
 				4BC0EB221FB7752F00E06861 /* Assets.xcassets in Resources */,
 				4BC0EB201FB7752F00E06861 /* Main.storyboard in Resources */,
-				57BCF4AF1FB7B7F700DA9209 /* test_db in Resources */,
-				57BCF4AE1FB7B7F700DA9209 /* mysql-swift in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
