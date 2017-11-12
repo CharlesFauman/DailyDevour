@@ -33,7 +33,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         events = [e1, e2];
         */
         
-        guard let events_url = URL(string: "http://129.161.93.241:8000/event_list_test.txt") else{
+        guard let events_url = URL(string: "http://129.161.93.109:8000/event_list_test.txt") else{
             print("bad url")
             return
         }
