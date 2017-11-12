@@ -92,10 +92,17 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RbJ-Xt-xdq">
                                 <rect key="frame" x="16" y="157" width="343" height="360"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="jNy-pP-EKU" id="agB-BJ-wHz"/>
+                                </connections>
                             </mapView>
                             <searchBar contentMode="redraw" prompt="Search By Keyword" translatesAutoresizingMaskIntoConstraints="NO" id="sVS-ih-ex1">
                                 <rect key="frame" x="0.0" y="72" width="375" height="75"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jNy-pP-EKU" id="o0l-QM-yu5"/>
+                                </connections>
                             </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,6 +119,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="map_view" destination="RbJ-Xt-xdq" id="UKI-8M-iY5"/>
                         <outlet property="searchBar" destination="sVS-ih-ex1" id="5RH-nm-ur2"/>
                     </connections>
                 </viewController>

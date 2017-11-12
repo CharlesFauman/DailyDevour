@@ -43,6 +43,7 @@ class LogInController: UIViewController {
     
     
     
+    
     @IBAction func logInAttempt() {
         
         guard let username = username_field.text, username != "" else {
@@ -60,6 +61,8 @@ class LogInController: UIViewController {
             return;
         }
         
+        username_field.text = "";
+        password_field.text = "";
         performSegue(withIdentifier: "LogInToMap", sender: self);
     }
     
