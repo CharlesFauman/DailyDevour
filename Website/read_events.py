@@ -1,4 +1,4 @@
-class Event:
+class Event2:
     def __init__(self, data):
         self.host = data[0]
         self.name = data[1]
@@ -25,10 +25,10 @@ def read_events(filename):
         times = pre_data[4].split(",")
         tags = pre_data[6].split(",")
         data = [pre_data[0], pre_data[1], pre_data[2], coordinates, times, pre_data[5], tags]
-        events.append(Event(data))
+        events.append(Event2(data))
     return events
 
-
+'''
 filename = input("input filename: ")
 events = read_events(filename)
 ev1 = events[0]
@@ -49,4 +49,4 @@ print(ev2.name)
 print(ev3.host)
 print(ev3.name)
 
-
+'''
