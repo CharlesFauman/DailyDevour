@@ -105,8 +105,7 @@ class Model{
     
     // public
     
-    // -> [Event]
-    public func getAllEvents(){
+    public static func getAllEvents() -> [Event]{
         let bundleURL = Bundle.main.bundleURL
         //let dataFolderURL = bundleURL.appendingPathComponent("data")
         let fileURL = bundleURL.appendingPathComponent("sample_events.txt")
@@ -119,10 +118,41 @@ class Model{
             print("error loading contents of:", fileURL, error)
         }
         
-        var all_components = mytext.components(separatedBy : "|")
-        var event_host = all_components[0]
-        var event_name = all_components[1]
         
+        var all_events : [Event] = []
+        
+        let events = mytext.components(separatedBy : "\n")
+        for event in events{
+            var all_components = event.components(separatedBy : "|")
+            let event_host = all_components[0]
+            let event_name = all_components[1]
+            let location_name = all_components[2]
+            
+            let locations = all_components[3].components(separatedBy : ",")
+            let latitude = Double(locations[0])!
+            print("HEYYYYY")
+            print(locations[1])
+            let longitude = Double(locations[1])!
+            
+            
+            let dates = all_components[4].components(separatedBy : ",")
+            
+            let date_formatter = DateFormatter();
+            date_formatter.dateFormat = "yyyy-MM-dd hh:mm"
+        
+            
+            let start_date = date_formatter.date(from: dates[0])!
+            let end_date = date_formatter.date(from: dates[1])!
+            
+            let website = all_components[5]
+            
+            let tags = all_components[6].components(separatedBy : ",").map{Tag(name: $0)}
+            
+            all_events.append(Event(host: event_host, name: event_name, location_name: location_name, location_coor: (latitude, longitude), tags: tags, start_time: start_date, end_time: end_date, website: website))
+            
+        }
+        
+        return all_events
     }
     
     

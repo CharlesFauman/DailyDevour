@@ -17,6 +17,8 @@ class LogInController: UIViewController {
     
     override func viewDidLoad() {
         
+        var events : [Event] = Model.getAllEvents()
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
