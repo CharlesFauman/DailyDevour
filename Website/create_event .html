@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My website</title>
+    <link type="text/css" rel="stylesheet" href="create_account.css"/>
+    <style>
+            #map {
+                height: 400px;
+                width: 100%;
+             }
+        </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="header" onclick="location.href='./index.html';">
+        <h1>Daily Devour</h1>
+    </div>
+
+        <div id="main">
+            <h2>Create an Event</h2> 
+			<!-- onsubmit="return validateFormOnSubmit(this); -->
+            <center> <p> Fill in the information below to be put into our system</p> </center>         
+            <form action="./handle_event.php" method="post">
+              Host name:<br>
+              <input type="text" name="host_name" ><br>
+              Event name:<br>
+              <input type="text" name="event_name" ><br>
+              Location name:<br>
+              <input type="text" name="location_name" ><br>
+			  Position:<br>
+              <input id="position" type="text" name="position" readonly><br>
+              <input type="submit" value="Submit">
+            </form>
+        </div>
+		<div id="map_stuff">
+            <center> <h2>MAP</h2> </center>
+            <!-- <img src="map.jpg" width="500">  -->
+            <div id="map"></div>
+            <br>
+            <br>
+            <script>
+			
+				function validateFormOnSubmit(form){
+					if(false) alert("This event cannot be added")
+					else{
+						writeEvent(form)
+					}
+				}
+				
+				function writeEvent(form) {
+					alert(form.host_name.value + " " + form.event_name.value + " " + form.location_name.value + " " +form.position.value);
+				}
+			
+                function initMap() {
+                    var uluru = {lat: 42.729321, lng:-73.679661};
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 15,
+                        center: uluru
+                    });
+                    var marker = new google.maps.Marker({
+                        position: uluru,
+                        map: map
+                    });
+					
+					// This event listener calls addMarker() when the map is clicked.
+					google.maps.event.addListener(map, 'click', function(e) {
+						placeMarkerAndPanTo(e.latLng, map);
+					});
+					
+					function placeMarkerAndPanTo(position, map) {
+						marker.setPosition(position);
+						document.getElementById("position").value = position;
+						map.panTo(position);
+					}
+                }
+
+				  
+            </script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAxoZ3626f5Sb1NkObEMe3BJOpJhqDJ4TM&callback=initMap">
+            </script>
+
+
+        </div>
+
+
+
+        <div id="footer">
+            <center> Copyright &copy; Charlie Fauman, Alex Jackowski, Adam Rabinowitz & Ido Tamir </center>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
