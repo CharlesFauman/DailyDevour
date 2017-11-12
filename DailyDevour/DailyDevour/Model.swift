@@ -104,21 +104,41 @@ class Model{
     
     
     // public
-    public func getAllEvents() -> {
+    
+    
+    public func getAllEvents() -> [Event] {
+        let bundleURL = Bundle.main.bundleURL
+        //let dataFolderURL = bundleURL.appendingPathComponent("data")
+        let fileURL = bundleURL.appendingPathComponent("sample_events.txt")
+        print(fileURL.path)
+        print(FileManager.default.fileExists(atPath: fileURL.path))
+        var mytext : String = ""
+        do {
+            mytext = try String(contentsOf: fileURL)
+        } catch {
+            print("error loading contents of:", fileURL, error)
+        }
+        
+        var all_components = mytext.components(separatedBy : "|")
+        var event_host = all_components[0]
+        var event_name = all_components[1]
         
     }
     
+    
+    
+    
     /*
-    public func getEvent(host_name : String, event_name : String, location_coor : (Double, Double)) -> Event {
-        
-        // query the specific event in the database
-        
-        
-        let event = Event(host: <#T##host_type#>, name: <#T##String#>, location_name: <#T##String#>, location_coor: <#T##(Double, Double)#>, tags: <#T##[Tag]#>, start_time: <#T##Date#>, end_time: <#T##Date#>, website: <#T##String?#>)
-        
-        return event
-    }
-    */
+     public func getEvent(host_name : String, event_name : String, location_coor : (Double, Double)) -> Event {
+     
+     // query the specific event in the database
+     
+     
+     let event = Event(host: <#T##host_type#>, name: <#T##String#>, location_name: <#T##String#>, location_coor: <#T##(Double, Double)#>, tags: <#T##[Tag]#>, start_time: <#T##Date#>, end_time: <#T##Date#>, website: <#T##String?#>)
+     
+     return event
+     }
+     */
     
     // private
     
