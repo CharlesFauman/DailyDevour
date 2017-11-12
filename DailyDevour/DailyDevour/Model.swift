@@ -119,18 +119,32 @@ class Model{
     //}
     
     public static func getAllEvents() -> [Event]{
+        guard let events_url = URL(string: "http://aws-website-dailydevour-vz8my.s3-website-us-east-1.amazonaws.com/event_list_test.txt") else{
+            print("bad url")
+            return []
+        }
+        
+        var mytext : String = ""
+        do {
+            mytext = try String(contentsOf: events_url)
+        } catch {
+            print("error loading contents of:", events_url, error)
+        }
+        
+        /*
         let bundleURL = Bundle.main.bundleURL
         //let dataFolderURL = bundleURL.appendingPathComponent("data")
-        let fileURL = bundleURL.appendingPathComponent("sample_events.txt")
+        let fileURL = URL(string : "http://aws-website-dailydevour-vz8my.s3-website-us-east-1.amazonaws.com/event_list_test.txt")
+        //let fileURL = bundleURL.appendingPathComponent("sample_events.txt")
         //print(fileURL.path)
         //print(FileManager.default.fileExists(atPath: fileURL.path))
         var mytext : String = ""
         do {
-            mytext = try String(contentsOf: fileURL)
+            mytext = try String(contentsOf: fileURL!)
         } catch {
             print("error loading contents of:", fileURL, error)
         }
-        
+        */
         
         var all_events : [Event] = []
         
